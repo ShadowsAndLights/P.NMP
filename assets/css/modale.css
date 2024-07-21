@@ -1,0 +1,110 @@
+.modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+.modal .modal__content {
+  opacity: 0;
+  transition: all 0.3s;
+}
+.modal-open {
+  display: flex;
+  animation: backgroundOpacity 300ms ease-in-out both 150ms;
+}
+.modal-open .modal__content {
+  animation: fadeIn 300ms ease-in-out both;
+}
+
+.modal-submit {
+  height: 900px !important;
+}
+
+.modal__content {
+  background-color: #fefefe;
+  border: 5px solid black;
+  width: 597px;
+  height: 769px;
+  padding-top: 18px;
+}
+@media screen and (max-width: 768px) {
+  .modal__content {
+    width: 286px;
+    height: 650px;
+  }
+}
+.modal__content__header {
+  width: 100%;
+}
+.modal__content form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+}
+.modal__content__form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  color: #313144;
+  margin-bottom: 24px;
+}
+.modal__content__form__label textarea {
+  resize: none;
+  height: 210px;
+}
+@media screen and (max-width: 768px) {
+  .modal__content__form__label textarea {
+    height: 149px;
+  }
+}
+.modal__content__form__label__input {
+  border-radius: 8px;
+  border: 1px solid #B8BBC2;
+  min-height: 40px;
+  max-width: 263px;
+  min-width: 190px;
+  width: 20vw;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+  margin: initial;
+  border-color: #dc3232;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+  border-color: #dc3232;
+}
+
+.wpcf7-not-valid-tip {
+  text-transform: initial;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes backgroundOpacity {
+  from {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+/*# sourceMappingURL=modale.css.map */

@@ -1,0 +1,200 @@
+.header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 146px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.09);
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;
+        align-items: flex-start;
+        position:fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 4;
+    }
+}
+
+.header__logo {
+    img {
+        height: 14px;
+        width: 216px;
+        @media screen and (max-width: 425px) { 
+            height: 9px;
+            width: 138px;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        padding-left: 40px;
+    }
+}
+
+.header__burger {
+    display: none;
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    @media screen and (max-width: 1024px) {
+        display: block;
+        cursor: pointer;
+}
+}
+
+.header__nav {
+    &__mobile {
+        display: none;
+    }
+    @media screen and (max-width: 1024px) {
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        transform: translate(150%);
+        background-color: initial;
+        &__open {
+            display: block;
+            animation: burgermenuopen 300ms ease-in-out both;
+        }
+        &__closed {
+            animation: burgermenuclosed 300ms ease-in-out both;
+        }
+        &__mobile {
+            position:relative;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.09);
+        }
+        &__icone__closed {
+            display: flex;
+            position: fixed;
+            cursor: pointer;
+            top: 30px;
+            right: 40px;
+        }
+    }
+}
+
+.header__nav__menu {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        .contactLink {
+            cursor: pointer;
+        }
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            justify-content: center;
+            gap: 18px;
+            width: 100vw;
+            height: calc(100vh - 80px);
+            background-color: #E00000;
+        }
+        li {
+            padding: 0;
+            margin-right: 45px;
+            @media screen and (max-width: 1024px) {
+                margin-right: initial;
+                height: 65px;
+            }
+            &:last-of-type {
+                margin-right: initial;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+                text-transform: uppercase;
+                font-weight: 400;
+                line-height: normal;
+                &:hover {
+                    font-weight: 700;
+                }
+                @media screen and (max-width: 1024px) {
+                    color: white;
+                    font-size: 44px;
+                }
+            }
+        }       
+}
+
+.overlay-animation {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:2;
+    animation: overlay 150ms ease-in-out both;
+    &__closed {
+        animation: overlayReverse 300ms linear both;
+    }
+}
+
+.opacity-animation {
+    animation: opacity 150ms ease-in-out both;
+    &__closed {
+        animation: opacityReverse 300ms linear both;
+    }
+}
+
+
+@keyframes burgermenuopen {
+    0% {
+        transform: translate(150%);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes burgermenuclosed {
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(150%);
+    }
+}
+
+@keyframes overlay {
+    0% {
+        background-color: initial;
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+@keyframes overlayReverse {
+    0% {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    100% {
+        background-color: initial;
+    }
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes opacityReverse {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
