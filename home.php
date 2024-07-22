@@ -21,7 +21,7 @@ if ($random_image) {
 <div class="home__content">
 <div class="home__content__selection">
         <div class="home__content__selection__filters">
-            <div class="home__filter">
+            <div id="ordercat" class="home__filter">
                 <span id="selectCategoryValue" class="home__filter__selected-option" value="">
                     Catégorie
                 </span>
@@ -44,7 +44,7 @@ if ($random_image) {
                     </ul>
                 </div>
             </div>
-            <div class="home__filter">
+            <div id="orderfor" class="home__filter">
                 <span id="selectFormatValue" class="home__filter__selected-option" value="">
                     Format
                 </span>
